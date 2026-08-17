@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%B7%3C/text%3E%3C/svg%3E" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07080D" />
+    <meta name="description" content="Доставка напитков по Адмиралтейскому району Санкт-Петербурга — 30-90 минут. Вино, виски, коньяк, пиво. Бесплатная доставка от 5000 ₽. 18+" />
+    <meta name="robots" content="index, follow" />
+    <meta name="rating" content="adult" />
+    <meta name="age" content="18" />
+    <meta name="dcterms.audience" content="adult" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <!-- Edit 5: SEO meta -->
+    <link rel="canonical" href="https://viktorotkin.github.io/admiralt-market/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Доставка+" />
+    <meta property="og:title" content="Доставка напитков по Адмиралтейскому району — 30-90 минут | 18+" />
+    <meta property="og:description" content="Заказывайте вино, виски, коньяк и крафт с доставкой 30-90 минут по Адмиралтейскому району СПб. Бесплатная доставка от 5000 ₽." />
+    <meta property="og:image" content="https://media.base44.com/images/public/6a6e0c9676dd3083c58ec824/08fc5363c_generated_b8af9742.png" />
+    <meta property="og:url" content="https://viktorotkin.github.io/admiralt-market/" />
+    <meta property="og:restrictions:age" content="18+" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Доставка напитков по Адмиралтейскому району — 30-90 минут | 18+" />
+    <meta name="twitter:description" content="Заказывайте вино, виски, коньяк и крафт с доставкой 30-90 минут. Бесплатная доставка от 5000 ₽." />
+    <meta name="twitter:image" content="https://media.base44.com/images/public/6a6e0c9676dd3083c58ec824/08fc5363c_generated_b8af9742.png" />
+    <!-- JSON-LD Store -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Store","name":"Доставка+","url":"https://viktorotkin.github.io/admiralt-market/","priceRange":"₽₽","telephone":"+7 (812) 199-19-99","address":{"@type":"PostalAddress","addressLocality":"Санкт-Петербург","addressCountry":"RU"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"127"},"openingHoursSpecification":{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"00:00","closes":"23:59"}}
+    </script>
+    <!-- JSON-LD FAQ -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Нужна ли регистрация?","acceptedAnswer":{"@type":"Answer","text":"Нет. Заказ оформляется по номеру телефона, а отслеживать можно по секретному ключу."}},{"@type":"Question","name":"Как быстро привезут?","acceptedAnswer":{"@type":"Answer","text":"Доставка 30–90 минут в зависимости от района."}},{"@type":"Question","name":"Как оплатить?","acceptedAnswer":{"@type":"Answer","text":"Наличными или картой при получении курьеру."}},{"@type":"Question","name":"Есть ли бесплатная доставка?","acceptedAnswer":{"@type":"Answer","text":"Да, при заказе от 5000 ₽ доставка бесплатная."}},{"@type":"Question","name":"Какой минимальный заказ?","acceptedAnswer":{"@type":"Answer","text":"Минимальная сумма заказа — 1500 ₽."}}]}
+    </script>
+    <!-- Edit 4: PROXY INJECTION — redirect /api/* and /uploads/* to vlvc.ru -->
+    <script>
+    (function(){
+      var BASE='https://vlvc.ru';
+      var origFetch=window.fetch;
+      window.fetch=function(url,opts){
+        if(typeof url==='string'){
+          if(url.startsWith('/api/')||url.startsWith('/uploads/'))url=BASE+url;
+        }else if(url&&url.url){
+          if(typeof url.url==='string'&&(url.url.startsWith('/api/')||url.url.startsWith('/uploads/'))){
+            url=new Request(BASE+url.url,{method:url.method,headers:url.headers,body:url.body,mode:url.mode,credentials:url.credentials,cache:url.cache,redirect:url.redirect,referrer:url.referrer,integrity:url.integrity});
+          }
+        }
+        return origFetch.call(this,url,opts);
+      };
+      var origOpen=XMLHttpRequest.prototype.open;
+      XMLHttpRequest.prototype.open=function(method,url){
+        if(typeof url==='string'&&(url.startsWith('/api/')||url.startsWith('/uploads/'))){
+          arguments[1]=BASE+url;
+        }
+        return origOpen.apply(this,arguments);
+      };
+      function fixSrc(el){
+        if(el.tagName==='IMG'||el.tagName==='SOURCE'){
+          var src=el.getAttribute('src');
+          if(src&&(src.startsWith('/uploads/')||src.startsWith('/api/')))el.setAttribute('src',BASE+src);
+        }
+      }
+      document.addEventListener('DOMContentLoaded',function(){
+        var obs=new MutationObserver(function(muts){
+          muts.forEach(function(m){
+            m.addedNodes.forEach(function(node){
+              if(node.nodeType===1){
+                fixSrc(node);
+                if(node.querySelectorAll)node.querySelectorAll('img,source').forEach(fixSrc);
+              }
+            });
+          });
+        });
+        obs.observe(document.body,{childList:true,subtree:true});
+        document.querySelectorAll('img,source').forEach(fixSrc);
+      });
+    })();
+    </script>
+    <title>Доставка+ — Доставка напитков по Адмиралтейскому району СПб | 18+</title>
+    <!-- Edit 1: relative paths /assets/ → ./assets/ -->
+    <script type="module" crossorigin src="./assets/index-BD0SzmIJ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DmdmSWPR.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
